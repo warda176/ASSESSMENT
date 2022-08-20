@@ -1,8 +1,6 @@
--- Cleansed FACT_InternetSales Table --
 SELECT 
   [ProductKey], 
   [OrderDateKey], 
-  [DueDateKey], 
   [ShipDateKey], 
   [CustomerKey], 
   --  ,[PromotionKey]
@@ -12,7 +10,7 @@ SELECT
   --  [SalesOrderLineNumber], 
   --  ,[RevisionNumber]
    [OrderQuantity]
-    ,[UnitPrice], 
+   
   --  ,[ExtendedAmount]
   --  ,[UnitPriceDiscountPct]
   --  ,[DiscountAmount] 
@@ -23,13 +21,11 @@ SELECT
   --  ,[CarrierTrackingNumber] 
   --  ,[CustomerPONumber] 
    ,[OrderDate] 
-    ,[DueDate] 
     ,[ShipDate] 
 FROM 
   [AdventureWorksDW2019].[dbo].[FactInternetSales]
- 
+
+
+WHERE LEFT(Orderdatekey,4) >= 2019 AND LEFT(Orderdatekey,4) <= 2021
 ORDER BY
   OrderDateKey ASC
-
-
-  
